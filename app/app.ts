@@ -10,7 +10,6 @@ function startGame() {
 document.getElementById('startGame')!.addEventListener('click', startGame);
 document.getElementById('randomStuff')!.addEventListener('click', doRandomStuff);
 
-
 function logPlayer(name: string = 'Unknown MultiMath player') {
     console.log(`New game starting for player: ${name}`)
 }
@@ -54,6 +53,7 @@ function doRandomStuff() {
     typeAssertion()
     optionalValues()
     callFatArrow()
+    ifaces()
 }
 
 function writeToScore() {
@@ -138,4 +138,29 @@ function arrowFilter() {
         }
     })
     console.log(`sc: ${scores} - hs: ${highScores}`)
+}
+
+function ifaces() {
+    interface Employee {
+        name: string
+        title: string
+        company: string
+    }
+
+    interface ArtCritic {
+        name: string
+        gere: string
+    }
+
+    let me = {
+        name: 'Aivars',
+        title: 'Coder',
+        level: `over 9000`,
+        company: 'Secret'
+    }
+
+    let employedDeveloper: Employee = me
+    console.log(`employedDeveloper ${employedDeveloper.name}`)
+
+    //let artCriticDeveloper: ArtCritic = me  does not compile
 }
