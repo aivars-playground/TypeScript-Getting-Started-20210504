@@ -5,8 +5,6 @@ function startGame() {
     logPlayer(playerName)
 
     postScore(100, playerName)
-    postScore(-1, playerName)
-
 }
 
 document.getElementById('startGame')!.addEventListener('click', startGame);
