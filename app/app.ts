@@ -17,9 +17,30 @@ function strictCode() {
     //basicString = null; does not compile with "strict": true,
     let nullableString: string | null;
     nullableString = 'b'
-    console.log(`sc basic: ${basicString}; nullable: ${nullableString}`)
+
+    console.log(`sc basic: ${basicString}; nullable: ${nullableString} tp: ${typeFor(nullableString)} tp_strange: ${strangeTypeFor(nullableString)}`)
     nullableString = null
-    console.log(`sc basic: ${basicString}; nullable: ${nullableString}`)
+    console.log(`sc basic: ${basicString}; nullable: ${nullableString} tp: ${typeFor(nullableString)} tp_strange (object???): ${strangeTypeFor(nullableString)}`)
+}
+
+function typeFor(elem: any) {
+    if(typeof elem ==='string') {
+        return "str"
+    } else if(typeof elem ==='number') {
+        return "nr"
+    } else if(elem === null) {
+        return "null"
+    } else {
+        return typeof elem
+    }
+}
+
+function strangeTypeFor(elem: any) {
+    if(typeof elem ==='string') {
+        return "str"
+    } else {
+        return typeof elem
+    }
 }
 
 function typeAssertion() {
