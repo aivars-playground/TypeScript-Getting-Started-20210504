@@ -1,3 +1,4 @@
+/// <reference path="./player.ts" />
 function startGame() {
     // starting game (will be removed with tsconfig.json ->"removeComments": true
 
@@ -44,24 +45,8 @@ function postScore(score: number, playerName?: string): void {
 const logMessage = (message: string) => console.log(message)
 const logError = (message: string) => console.error(message)
 
-
-let myResult: Result = {
-    factor: 7,
-    playerName: "Aivars",
-    problemCount: 5,
-    score: 5
-}
-
-let me: Person = {
-    formatName: () => "Aivars",
-    name: "Aivars"
-}
-
-
-
-
-
-
+const firstPlayer: Player = new Player('Aivars')
+console.log(`firstPlayer: ${firstPlayer.name}`)
 
 
 
