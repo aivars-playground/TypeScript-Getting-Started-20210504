@@ -1,26 +1,52 @@
 function startGame() {
     // starting game (will be removed with tsconfig.json ->"removeComments": true
 
+    let playerName: string = getInputValue('playername')!
+    logPlayer(playerName)
+
+    postScore(100, playerName)
+}
+
+document.getElementById('startGame')!.addEventListener('click', startGame);
+
+function logPlayer(name: string) {
+    console.log(`New game starting for player: ${name}`)
+}
+
+function getInputValue(elementId: string): string | undefined {
+    //casting acts as '!' on nullable
+    //casting does not throw error on incorrect type
+    const inputElement: HTMLInputElement = <HTMLInputElement> document.getElementById(elementId);
+    if (inputElement.value === '') {
+        return undefined
+    } else {
+        return inputElement.value
+    }
+}
+
+function postScore(score: number, playerName: string): void {
+    const scoreElement: HTMLElement | null = document.getElementById('postedScores')
+    scoreElement!.innerText = `${score} - ${playerName}`
+}
+
+function randomStuff() {
+    writeToScore()
     logMe()
     strictCode()
     typeAssertion()
     optionalValues()
+}
 
+function writeToScore() {
     const STARTING_NEW_GAME = 'Starting New Game...'
     let messageElement = document.getElementById('messages')
     messageElement!.innerText = STARTING_NEW_GAME
 }
 
-document.getElementById('startGame')!.addEventListener('click', startGame);
-
 function logMe() {
     //logPlayer(playerName) would not compile with strict option
     let playerName: string = "Aivars"
     logPlayer(playerName)
-}
-
-function logPlayer(name: string) {
-    console.log(`New game starting for player: ${name}`)
 }
 
 function strictCode() {
