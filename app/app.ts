@@ -44,6 +44,42 @@ function postScore(score: number, playerName?: string): void {
 const logMessage = (message: string) => console.log(message)
 const logError = (message: string) => console.error(message)
 
+
+let myResult: Result = {
+    factor: 7,
+    playerName: "Aivars",
+    problemCount: 5,
+    score: 5
+}
+
+let me: Person = {
+    formatName: () => "Aivars",
+    name: "Aivars"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //---------------------------------------
 
 function doRandomStuff() {
