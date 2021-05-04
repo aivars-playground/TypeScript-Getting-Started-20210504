@@ -5,6 +5,8 @@ function startGame() {
     logPlayer(playerName)
 
     postScore(100, playerName)
+    postScore(-1, playerName)
+
 }
 
 document.getElementById('startGame')!.addEventListener('click', startGame);
@@ -27,9 +29,25 @@ function getInputValue(elementId: string): string | undefined {
 }
 
 function postScore(score: number, playerName?: string): void {
+
+    let logger: (message: string) => void
+
+    if(score<0) {
+        logger = logError
+    } else {
+        logger = logMessage
+    }
+
     const scoreElement: HTMLElement | null = document.getElementById('postedScores')
     scoreElement!.innerText = `${score} - ${playerName}`
+
+    logger(`Score: ${score} - ${playerName}`)
 }
+
+const logMessage = (message: string) => console.log(message)
+const logError = (message: string) => console.error(message)
+
+//---------------------------------------
 
 function doRandomStuff() {
     writeToScore()
