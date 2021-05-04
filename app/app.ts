@@ -4,11 +4,14 @@ function startGame() {
     logMe()
     strictCode()
     typeAssertion()
+    optionalValues()
 
     const STARTING_NEW_GAME = 'Starting New Game...'
     let messageElement = document.getElementById('messages')
     messageElement!.innerText = STARTING_NEW_GAME
 }
+
+document.getElementById('startGame')!.addEventListener('click', startGame);
 
 function logMe() {
     //logPlayer(playerName) would not compile with strict option
@@ -60,4 +63,10 @@ function typeAssertion() {
     console.log(`legacy: ${legacyCodeValue} another fixed: ${anotherApproach}`)
 }
 
-document.getElementById('startGame')!.addEventListener('click', startGame);
+function optionalValues() {
+    console.log(`withOptional missing:${withReturnValue(1)}`);
+}
+
+function withReturnValue(score: number, optionalMessage?: string, paramWithDefault: number = -123): string {
+    return `score: ${score}, msg: ${optionalMessage}, param: ${paramWithDefault}`
+}
