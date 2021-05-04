@@ -1,5 +1,5 @@
 function startGame() {
-    // starting game
+    // starting game (will beremoved with tsconfig.json ->"removeComments": true
     var messageElement = document.getElementById('messages');
     messageElement!.innerText = 'Starting New Game...'
 }
