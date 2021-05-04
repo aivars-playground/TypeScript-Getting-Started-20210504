@@ -1,7 +1,7 @@
 function startGame() {
     // starting game (will be removed with tsconfig.json ->"removeComments": true
 
-    let playerName: string = getInputValue('playername')!
+    let playerName: string | undefined = getInputValue('playername')
     logPlayer(playerName)
 
     postScore(100, playerName)
@@ -9,7 +9,7 @@ function startGame() {
 
 document.getElementById('startGame')!.addEventListener('click', startGame);
 
-function logPlayer(name: string) {
+function logPlayer(name: string = 'Unknown MultiMath player') {
     console.log(`New game starting for player: ${name}`)
 }
 
@@ -24,7 +24,7 @@ function getInputValue(elementId: string): string | undefined {
     }
 }
 
-function postScore(score: number, playerName: string): void {
+function postScore(score: number, playerName?: string): void {
     const scoreElement: HTMLElement | null = document.getElementById('postedScores')
     scoreElement!.innerText = `${score} - ${playerName}`
 }
