@@ -1,6 +1,6 @@
 function startGame() {
     var messageElement = document.getElementById('messages');
-    messageElement.innerText = 'Starting New Game...'
+    messageElement!.innerText = 'Starting New Game...'
 }
 
-document.getElementById('startGame').addEventListener('click', startGame);
+document.getElementById('startGame')!.addEventListener('click', startGame);
