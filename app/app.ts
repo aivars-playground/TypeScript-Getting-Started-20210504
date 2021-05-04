@@ -1,14 +1,23 @@
 function startGame() {
     // starting game (will be removed with tsconfig.json ->"removeComments": true
 
-    const playerName: string = "Aivars"
-    logPlayer(playerName)
+    logMe()
     strictCode()
     typeAssertion()
 
     const STARTING_NEW_GAME = 'Starting New Game...'
     let messageElement = document.getElementById('messages')
     messageElement!.innerText = STARTING_NEW_GAME
+}
+
+function logMe() {
+    //logPlayer(playerName) would not compile with strict option
+    let playerName: string = "Aivars"
+    logPlayer(playerName)
+}
+
+function logPlayer(name: string) {
+    console.log(`New game starting for player: ${name}`)
 }
 
 function strictCode() {
@@ -49,10 +58,6 @@ function typeAssertion() {
     console.log(`legacy: ${legacyCodeValue} fixed: ${fixedTypeValue}`)
     let anotherApproach: string = (legacyCodeValue as number).toFixed(4)
     console.log(`legacy: ${legacyCodeValue} another fixed: ${anotherApproach}`)
-}
-
-function logPlayer(name: string) {
-    console.log(`New game starting for player: ${name}`)
 }
 
 document.getElementById('startGame')!.addEventListener('click', startGame);
