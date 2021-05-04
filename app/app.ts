@@ -8,6 +8,8 @@ function startGame() {
 }
 
 document.getElementById('startGame')!.addEventListener('click', startGame);
+document.getElementById('randomStuff')!.addEventListener('click', doRandomStuff);
+
 
 function logPlayer(name: string = 'Unknown MultiMath player') {
     console.log(`New game starting for player: ${name}`)
@@ -29,12 +31,13 @@ function postScore(score: number, playerName?: string): void {
     scoreElement!.innerText = `${score} - ${playerName}`
 }
 
-function randomStuff() {
+function doRandomStuff() {
     writeToScore()
     logMe()
     strictCode()
     typeAssertion()
     optionalValues()
+    callFatArrow()
 }
 
 function writeToScore() {
@@ -95,4 +98,28 @@ function optionalValues() {
 
 function withReturnValue(score: number, optionalMessage?: string, paramWithDefault: number = -123): string {
     return `score: ${score}, msg: ${optionalMessage}, param: ${paramWithDefault}`
+}
+
+function callFatArrow() {
+    console.log(`2 squared = ${arrowSquare(2)}`)
+    console.log(`2 + 3 = ${arrowAdd(2,3)}`)
+    arrowGreeting()
+    arrowFilter()
+}
+
+const arrowSquare = (x:number) => x * x
+
+const arrowAdd = (a:number, b:number) => a + b
+
+const arrowGreeting = () => console.log("Hi!")
+
+function arrowFilter() {
+    let scores: number[] = [70,110,10]
+    let highScores: number[] = scores.filter((value, index, array) => {
+        console.log(`---value:${value},index:${index},array:${array}`)
+        if (value > 100) {
+            return true
+        }
+    })
+    console.log(`sc: ${scores} - hs: ${highScores}`)
 }
