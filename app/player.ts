@@ -5,5 +5,5 @@ class Player implements Person {
     }
     name: string
     age?:number
-    formatName = () => this.name!.toUpperCase();
+    formatName = () => this.name!.toUpperCase()
 }

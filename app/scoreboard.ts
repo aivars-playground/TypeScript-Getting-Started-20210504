@@ -1,6 +1,7 @@
 ///<reference path="result.ts"/>
 
 class Scoreboard {
+
     private results: Result[] = []
 
     addResult(newResult: Result): void {
@@ -16,6 +17,6 @@ class Scoreboard {
         }
 
         const scoresElement: HTMLElement = document.getElementById('scores')!
-        scoresElement. = output
+        scoresElement.innerHTML = output
     }
 }
