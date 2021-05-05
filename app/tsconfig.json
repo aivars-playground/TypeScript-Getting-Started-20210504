@@ -3,8 +3,7 @@
   "compilerOptions": {
     "removeComments": true,
     "module": "CommonJS",
-    "moduleResolution": "Node",
-    "traceResolution": true
+    "moduleResolution": "Node"
   },
   "files": [
     "./app.ts"
