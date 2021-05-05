@@ -8,6 +8,7 @@ class Zzz {
         Zzz.optionalValues()
         Zzz.callFatArrow()
         Zzz.ifaces()
+        Zzz.classesDemo()
     }
 
     static writeToScore() {
@@ -118,6 +119,29 @@ class Zzz {
         console.log(`employedDeveloper ${employedDeveloper.name}`)
 
         //let artCriticDeveloper: ArtCritic = me  does not compile
+    }
+
+    static classesDemo() {
+
+        class Developer {
+            constructor() {
+                console.log(`Developer constructor: ${this}`)
+            }
+        }
+
+        class WebDeveloper extends Developer {
+            readonly favouriteEditor: string
+            constructor(editor: string) {
+                super();
+                this.favouriteEditor = editor
+            }
+        }
+
+        const webdev = new WebDeveloper(`vi`)
+
+        console.log(`webdev ${webdev.favouriteEditor}`)
+
+
     }
 
 }
