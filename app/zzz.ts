@@ -1,4 +1,4 @@
-class Zzz {
+export class Zzz {
 
     static doRandomStuff() {
         Zzz.writeToScore()
