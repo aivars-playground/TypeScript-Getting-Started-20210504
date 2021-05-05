@@ -2,7 +2,6 @@ class Zzz {
 
     static doRandomStuff() {
         Zzz.writeToScore()
-        Zzz.logMe()
         Zzz.strictCode()
         Zzz.typeAssertion()
         Zzz.optionalValues()
@@ -17,12 +16,6 @@ class Zzz {
         messageElement!.innerText = STARTING_NEW_GAME
     }
 
-
-    static logMe() {
-        //logPlayer(playerName) would not compile with strict option
-        let playerName: string = "Aivars"
-        logPlayer(playerName)
-    }
 
     static strictCode() {
         let basicString: string;

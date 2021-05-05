@@ -16,6 +16,6 @@ class Scoreboard {
         }
 
         const scoresElement: HTMLElement = document.getElementById('scores')!
-        scoresElement.innerText = output
+        scoresElement. = output
     }
 }
